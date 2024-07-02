@@ -25,7 +25,7 @@ def lambda_handler(event, context):
         except Exception as e:
             return {
                 'statusCode': 200,
-                'body': json.dumps({'message': f'Hello, {first_name}!')
+                'body': json.dumps({'message': f'Hello, {first_name}!'})
             }
     except KeyError as e:
         return {
