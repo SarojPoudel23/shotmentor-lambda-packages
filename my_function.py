@@ -15,20 +15,17 @@ def lambda_handler(event, context):
             'body': json.dumps({'message': f'Hello, {first_name}!'})
         }
     except KeyError as e:
-        logging.error(f"KeyError: {str(e)}")
         return {
             'statusCode': 400,
             'body': json.dumps({'error': 'Missing required parameter'})
         }
     except json.JSONDecodeError as e:
-        logging.error(f"JSONDecodeError: {str(e)}")
         return {
             'statusCode': 400,
             'body': json.dumps({'error': 'Invalid JSON format'})
         }
     except Exception as e:
-        logging.error(f"Unexpected error: {str(e)}")
         return {
             'statusCode': 500,
-            'body': json.dumps({'error': 'Internal server error'})
+            'body': json.dumps({'error': e+'Internal server error'})
         }
