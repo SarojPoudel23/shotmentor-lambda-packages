@@ -4,7 +4,7 @@ import pandas as pd
 import mediapipe as mp
 import numpy as np
 
-def lambda_handler1(event, context):
+def lambda_handler(event, context):
     try:
         # Get the HTTP body from the event
         http_body = event['body']
