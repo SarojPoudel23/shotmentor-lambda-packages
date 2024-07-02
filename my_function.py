@@ -40,5 +40,5 @@ def lambda_handler(event, context):
         logging.error(f"Unexpected error: {str(e)}")
         return {
             'statusCode': 200,
-            'body': json.dumps({'error': 'Internal server error'})
+            'body': json.dumps({'error': 'There is an Internal server error'})
         }
